@@ -45,7 +45,7 @@ class Home : AppCompatActivity() {
 
         val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
         btnAvancar.setOnClickListener {
-            val intent = Intent(this, Profile::class.java)
+            val intent = Intent(this, BuscarActivity::class.java)
             startActivity(intent)
         }
 

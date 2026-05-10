@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
 
             btnAvancar.setOnClickListener {
-                // Cria a intenção de sair desta tela para a tela de Login
+
                 val intent = Intent(this, Login::class.java)
                 startActivity(intent)
             }
