@@ -1,21 +1,22 @@
-package com.example.kolaeregister
-
+package com.example.kolaeregister.ui.quadra
 
 import android.content.Intent
-import android.icu.text.IDNA
 import android.os.Bundle
 import android.view.View
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.kolaeregister.ui.main.ProfileActivity
+import com.example.kolaeregister.R
 
-class Profile : AppCompatActivity() {
+class InfomacaoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_infomacao)
 
-
-        val rootView = findViewById<View>(R.id.profile)
+        val rootView = findViewById<View>(R.id.info)
         if (rootView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -24,9 +25,14 @@ class Profile : AppCompatActivity() {
             }
         }
 
+        val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
+        btnAvancar.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
         val btnVoltar = findViewById<View>(R.id.btnVoltarFluxo)
         btnVoltar.setOnClickListener {
-            startActivity(Intent(this, InfomacaoActivity::class.java))
+            startActivity(Intent(this, BuscarActivity::class.java))
         }
     }
 }

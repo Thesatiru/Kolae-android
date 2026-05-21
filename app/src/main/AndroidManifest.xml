@@ -13,7 +13,7 @@
         android:theme="@style/Theme.KolaeRegister" >
 
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ui.auth.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,27 +22,27 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.auth.CadastroActivity"
             android:exported="false" />
 
         <activity
-            android:name=".BuscarActivity"
+            android:name=".ui.quadra.BuscarActivity"
             android:exported="false" />
 
         <activity
-            android:name=".InfomacaoActivity"
+            android:name=".ui.quadra.InfomacaoActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Profile"
+            android:name=".ui.main.ProfileActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Home"
+            android:name=".ui.quadra.HomeActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Login"
+            android:name=".ui.auth.LoginActivity"
             android:exported="false" />
 
         <meta-data

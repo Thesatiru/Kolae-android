@@ -1,14 +1,25 @@
-package com.example.kolaeregister
+package com.example.kolaeregister.ui.quadra
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.kolaeregister.R
+import com.example.kolaeregister.ui.main.ProfileActivity
+
+import com.example.kolaeregister.ui.quadra.QuadraViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+import kotlin.getValue
 
 class BuscarActivity : AppCompatActivity() {
+
+    private  val viewModel: QuadraViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,7 +41,31 @@ class BuscarActivity : AppCompatActivity() {
 
         val btnVoltar = findViewById<View>(R.id.btnVoltarFluxo)
         btnVoltar.setOnClickListener {
-            startActivity(Intent(this, Home::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
         }
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        bottomNavigation.selectedItemId = R.id.nav_explorer
+
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId){
+                R.id.nav_pesquisar ->{
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_perfil ->{
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+
+        }
+
     }
 }

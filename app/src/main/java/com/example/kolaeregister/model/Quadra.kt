@@ -1,4 +1,4 @@
-package com.example.kolaeregister
+package com.example.kolaeregister.model
 
 data class Quadra(
     val nome: String,

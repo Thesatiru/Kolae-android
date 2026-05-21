@@ -7,13 +7,12 @@
         android:title="Pesquisar" />
 
     <item
-        android:id="@+id/nav_favoritos"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Favoritos" />
+        android:id="@+id/nav_explorer"
+        android:icon="@drawable/ic_explorer"
+        android:title="Explorar" />
 
     <item
         android:id="@+id/nav_perfil"
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="Perfil" />
-
 </menu>

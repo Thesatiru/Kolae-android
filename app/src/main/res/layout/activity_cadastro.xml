@@ -63,6 +63,7 @@
                     app:boxCornerRadiusTopStart="24dp"
                     app:startIconDrawable="@drawable/ic_person">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_nome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Nome Completo"
@@ -80,6 +81,7 @@
                     app:boxCornerRadiusTopStart="24dp"
                     app:startIconDrawable="@drawable/ic_email">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="E-mail"
@@ -97,6 +99,7 @@
                     app:boxCornerRadiusTopStart="24dp"
                     app:startIconDrawable="@drawable/ic_calendar">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_birthdate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="dd/mm/aaaa"
@@ -115,6 +118,7 @@
                     app:startIconDrawable="@drawable/ic_lock"
                     app:passwordToggleEnabled="true">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Senha"
@@ -133,6 +137,7 @@
                     app:startIconDrawable="@drawable/ic_lock"
                     app:passwordToggleEnabled="true">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_password_confirm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Confirmar Senha"
@@ -170,28 +175,4 @@
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnVoltarFluxo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_media_previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:fabSize="mini"
-        app:tint="#FFFFFF"
-        app:backgroundTint="#757575"
-        android:visibility="gone" /> <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/btnAvancarFluxo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:src="@android:drawable/ic_media_next"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:fabSize="mini"
-    app:tint="#FFFFFF"
-    app:backgroundTint="#007BFF" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
