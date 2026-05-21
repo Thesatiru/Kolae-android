@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.kolaeregister.R
 import com.example.kolaeregister.ui.quadra.BuscarActivity
 import com.example.kolaeregister.ui.quadra.HomeActivity
-import com.example.kolaeregister.ui.quadra.InfomacaoActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileActivity : AppCompatActivity() {

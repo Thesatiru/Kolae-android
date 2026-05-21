@@ -11,14 +11,13 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.kolaeregister.R
 import com.example.kolaeregister.ui.main.ProfileActivity
 
-import com.example.kolaeregister.ui.quadra.QuadraViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import kotlin.getValue
 
 class BuscarActivity : AppCompatActivity() {
 
-    private  val viewModel: QuadraViewModel by viewModels()
+    private  val viewModel: VenueViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +35,7 @@ class BuscarActivity : AppCompatActivity() {
 
         val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
         btnAvancar.setOnClickListener {
-            startActivity(Intent(this, InfomacaoActivity::class.java))
+            startActivity(Intent(this, InformationActivity::class.java))
         }
 
         val btnVoltar = findViewById<View>(R.id.btnVoltarFluxo)

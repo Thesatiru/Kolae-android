@@ -1,6 +1,7 @@
 [versions]
 activityKtx = "1.13.0"
 agp = "9.1.0"
+glide = "4.16.0"
 kotlin = "2.1.0" # Atualizado para corrigir a incompatibilidade
 ksp = "2.1.0-1.0.29" # Versão exata que corrige o erro "getAndroidVariant"
 coreKtx = "1.10.1"
@@ -19,6 +20,7 @@ androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

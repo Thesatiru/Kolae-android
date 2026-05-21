@@ -5,20 +5,31 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels // <-- Certifique-se de que este import está aqui
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kolaeregister.R
+import com.example.kolaeregister.data.AppDatabase
+import com.example.kolaeregister.repository.VenueRepository
 import com.example.kolaeregister.ui.adapter.QuadraAdapter
 import com.example.kolaeregister.ui.auth.LoginActivity
 import com.example.kolaeregister.ui.main.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
-    private val viewModel: QuadraViewModel by viewModels()
+
+    private lateinit var venueViewModel: VenueViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val db = AppDatabase.getDatabase(this)
+        val repository = VenueRepository(db.venueDao())
+        val factory = VenueViewModelFactory(repository)
+
+        venueViewModel = ViewModelProvider(this,factory)[VenueViewModel::class.java]
+
 
         val rvQuadras = findViewById<RecyclerView>(R.id.rvQuadras)
         rvQuadras.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -26,27 +37,17 @@ class HomeActivity : AppCompatActivity() {
         val rvMaisAvaliadas = findViewById<RecyclerView>(R.id.rvMaisAvaliadas)
         rvMaisAvaliadas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        viewModel.quadrasPerto.observe(this) { listaPerto ->
-            rvQuadras.adapter = QuadraAdapter(listaPerto)
+        venueViewModel.quadrasPerto.observe(this){
+
+            maisPerto -> rvQuadras.adapter = QuadraAdapter(maisPerto)
         }
 
-        viewModel.quadrasMaisAvaliadas.observe(this) { listaMaisAvaliadas ->
-            rvMaisAvaliadas.adapter = QuadraAdapter(listaMaisAvaliadas)
+        venueViewModel.quadrasMaisAvaliadas.observe(this){
+            maisAvaliadas -> rvMaisAvaliadas.adapter = QuadraAdapter(maisAvaliadas)
         }
 
-        viewModel.carregarDadosHome()
+        venueViewModel.carregarDadosHome()
 
-        val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
-        btnAvancar.setOnClickListener {
-            val intent = Intent(this, BuscarActivity::class.java)
-            startActivity(intent)
-        }
-
-        val btnVoltar = findViewById<View>(R.id.btnVoltarFluxo)
-        btnVoltar.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
 
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)

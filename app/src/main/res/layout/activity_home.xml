@@ -217,35 +217,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnVoltarFluxo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:src="@android:drawable/ic_media_previous"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:fabSize="mini"
-        app:tint="#FFFFFF"
-        app:backgroundTint="#757575"
-        android:elevation="20dp"
-        app:elevation="20dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAvancarFluxo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:src="@android:drawable/ic_media_next"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:fabSize="mini"
-        app:tint="#FFFFFF"
-        app:backgroundTint="#007BFF"
-        android:elevation="20dp"
-        app:elevation="20dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
