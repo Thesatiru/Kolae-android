@@ -21,6 +21,15 @@ data class User(
     @ColumnInfo(name = "avatar_path")
     val avatarPath: String?,
 
+    @ColumnInfo(name = "instagram_url")
+    val instagramUrl: String? = null,
+
+    @ColumnInfo(name = "facebook_url")
+    val facebookUrl: String? = null,
+
+    @ColumnInfo(name = "x_url")
+    val xUrl: String? = null,
+
     @ColumnInfo(name = "force_password_change")
     val forcePasswordChange: Int = 0,
 

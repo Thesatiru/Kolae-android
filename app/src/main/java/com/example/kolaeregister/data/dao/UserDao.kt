@@ -2,7 +2,9 @@ package com.example.kolaeregister.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.example.kolaeregister.data.model.User
 
 @Dao
@@ -24,5 +26,11 @@ interface UserDao {
 
     @Query("SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1")
     fun login(email: String, password: String): User?
+
+    @Update
+    suspend fun updateUser(user: User)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertUser(user: User)
 }
 
