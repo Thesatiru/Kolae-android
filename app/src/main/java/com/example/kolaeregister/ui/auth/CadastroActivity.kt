@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.kolaeregister.R
 import com.example.kolaeregister.data.AppDatabase
 import com.example.kolaeregister.repository.AuthRepository
+import com.example.kolaeregister.ui.main.MaskUtil
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,7 @@ class CadastroActivity : AppCompatActivity() {
         val campoNome = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.edt_nome)
         val campoEmail = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.edt_email)
         val campoBithdate = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.edt_birthdate)
+        campoBithdate.addTextChangedListener(MaskUtil.insert(campoBithdate,"##/##/####"))
         val campoPassword = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.edt_password)
         val campoConfirmPass = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.edt_password_confirm)
 
@@ -77,7 +79,16 @@ class CadastroActivity : AppCompatActivity() {
         if (rootView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+
+
+                val ime = insets.getInsets(WindowInsetsCompat.Type.ime())
+                v.setPadding(
+                    systemBars.left,
+                    systemBars.top,
+                    systemBars.right,
+                    systemBars.bottom + ime.bottom
+                )
+
                 insets
             }
         }

@@ -33,16 +33,6 @@ class BuscarActivity : AppCompatActivity() {
             }
         }
 
-        val btnAvancar = findViewById<View>(R.id.btnAvancarFluxo)
-        btnAvancar.setOnClickListener {
-            startActivity(Intent(this, InformationActivity::class.java))
-        }
-
-        val btnVoltar = findViewById<View>(R.id.btnVoltarFluxo)
-        btnVoltar.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
-        }
-
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
         bottomNavigation.selectedItemId = R.id.nav_explorer

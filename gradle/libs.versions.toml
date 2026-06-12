@@ -2,8 +2,8 @@
 activityKtx = "1.13.0"
 agp = "9.1.0"
 glide = "4.16.0"
-kotlin = "2.1.0" # Atualizado para corrigir a incompatibilidade
-ksp = "2.1.0-1.0.29" # Versão exata que corrige o erro "getAndroidVariant"
+kotlin = "2.1.0"
+ksp = "2.1.0-1.0.29"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -13,8 +13,8 @@ lifecycleViewmodelKtx = "2.10.0"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
-roomVersion = "2.6.1"
-coreKtxVersion = "1.18.0"
+roomVersion = "2.7.0-alpha01"
+
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -30,12 +30,13 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtxVersion" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

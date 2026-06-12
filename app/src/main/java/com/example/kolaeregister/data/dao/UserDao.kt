@@ -28,9 +28,9 @@ interface UserDao {
     fun login(email: String, password: String): User?
 
     @Update
-    suspend fun updateUser(user: User)
+    suspend fun updateUser(user: User): Int 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUser(user: User)
+    suspend fun insertUser(user: User): Long
 }
 
