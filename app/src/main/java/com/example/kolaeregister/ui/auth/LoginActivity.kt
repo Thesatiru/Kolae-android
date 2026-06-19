@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.kolaeregister.ui.quadra.HomeActivity
 import com.example.kolaeregister.R
 import com.example.kolaeregister.data.AppDatabase
+import com.example.kolaeregister.data.UserSession
 import com.example.kolaeregister.repository.AuthRepository
 import kotlin.concurrent.thread
 
@@ -42,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
                             if (usuarioLogado != null){
                                 Toast.makeText(this,"Bem-vindo, ${usuarioLogado.name}!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, HomeActivity::class.java)
+                                UserSession.userName = usuarioLogado.name
+                                UserSession.userEmail = usuarioLogado.email
                                 startActivity(intent)
                                 finish()
                             } else{
@@ -53,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }.start()
             }
+
 
             val tvCreateAccount = findViewById<TextView>(R.id.tvCreateAccount)
 

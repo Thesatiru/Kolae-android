@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         venueViewModel = ViewModelProvider(this,factory)[VenueViewModel::class.java]
 
+        val nomeRecebido = intent.getStringExtra("USER_NAME") ?: "Usuário"
 
         val rvQuadras = findViewById<RecyclerView>(R.id.rvQuadras)
         rvQuadras.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)

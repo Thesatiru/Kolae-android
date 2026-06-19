@@ -18,12 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/perfil_capa"
+            <View
+                android:id="@+id/perfil_capa_azul"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:src="@drawable/perfil_capa"
-                android:scaleType="centerCrop" />
+                android:background="#002244" />
 
             <View
                 android:id="@+id/view_fundo_arredondado"
@@ -48,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/perfil_avatar"
+                    android:src="@mipmap/ic_undefined"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
             </FrameLayout>
 
@@ -75,7 +74,8 @@
                     android:id="@+id/perfil_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Marcos"
+                    android:text=""
+                    tools:text="Nome do Usuário"
                     android:textColor="#000000"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -134,7 +134,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="56"
+                            android:text="0"
                             android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold"/>
@@ -160,7 +160,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="13"
+                            android:text="0"
                             android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold"/>
@@ -186,7 +186,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="26"
+                            android:text="0"
                             android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold"/>
@@ -215,23 +215,29 @@
                     android:textStyle="bold"
                     android:layout_marginTop="32dp"/>
 
-                <TextView
-                    android:id="@+id/post_legenda"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Jogo pocou ontem🔥🔥🔥"
-                    android:textColor="#757575"
-                    android:textSize="16sp"
-                    android:layout_marginTop="16dp"/>
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginBottom="48dp">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:src="@drawable/imagem_feed"
-                    android:scaleType="centerCrop"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="32dp"
-                    app:shapeAppearanceOverlay="@style/RoundedImageView"/>
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@mipmap/ic_lupa" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Não há nada por aqui..."
+                        android:textColor="#9E9E9E"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="16dp" />
+
+                </LinearLayout>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>

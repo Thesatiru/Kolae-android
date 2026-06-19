@@ -9,7 +9,7 @@ import com.example.kolaeregister.data.dao.VenueDao
 import com.example.kolaeregister.data.model.User
 import com.example.kolaeregister.data.model.Venue
 
-@Database(entities = [User::class, Venue::class], version = 5, exportSchema = false)
+@Database(entities = [User::class, Venue::class], version = 6, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao

@@ -3,10 +3,12 @@ package com.example.kolaeregister.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.kolaeregister.R
+import com.example.kolaeregister.data.UserSession
 import com.example.kolaeregister.ui.quadra.BuscarActivity
 import com.example.kolaeregister.ui.quadra.HomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -15,6 +17,9 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        val txtNome = findViewById<TextView>(R.id.perfil_nome)
+        txtNome.text = UserSession.userName
 
 
         val rootView = findViewById<View>(R.id.profile)
@@ -25,6 +30,7 @@ class ProfileActivity : AppCompatActivity() {
                 insets
             }
         }
+
 
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
